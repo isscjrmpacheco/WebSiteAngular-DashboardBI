@@ -1,0 +1,33 @@
+<!-- Instalar npm install --save @ng-select/ng-select -->
+<!-- Agregar el estilo con import en C:\Users\ISSCJRMP\Documents\ISSC811\Peimbert\wsa-dashboard\src\styles.css -->
+<td>
+    <tr>
+<!-- <label>Your first ng-select</label> -->
+<ng-select [items]="dimensions"
+           bindLabel="name"
+           placeholder="Select Dimension"
+           [(ngModel)]="selectedDimension"           
+           [editableSearchTerm]	=false
+           style="margin: 20px; "
+           >
+</ng-select>
+
+    Selected city: {{selectedDimension | json}}
+</tr>
+</td>
+<td>
+<tr>
+<ng-select [multiple]="true"
+placeholder="Select Item" 
+[(ngModel)]="selectedCars" style="margin: 20px; "> 
+<!-- [disabled]="car.disabled" -->
+    <ng-option *ngFor="let car of cars" [value]="car.nameDimension" >{{car.name}}</ng-option>
+    <!-- <ng-option [value]="'custom'">Custom</ng-option> -->
+</ng-select>
+
+<!-- <br/>Selected car ID: {{selectedCars | json}} -->
+</tr>
+</td>
+
+<td><tr><button (click)="onChange()" type="button" style="margin: 20px; " class="btn btn-dark">Dark</button></tr></td>
+
